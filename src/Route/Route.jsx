@@ -3,6 +3,10 @@ import MainLayout from '../Layouts/MainLayout';
 import Home from '../pages/Home/Home';
 import Products from '../pages/products/Products';
 import Product from '../pages/Product/Product';
+import DashboardLayout from '../Layouts/DashboardLayout';
+import Dashboard from '../pages/Dashboard/Dashboard';
+import Profile from '../pages/profile/Profile';
+import EditProfile from '../pages/EditProfile/EditProfile';
 
 const router = createBrowserRouter([
     {
@@ -19,7 +23,21 @@ const router = createBrowserRouter([
            element: <Products></Products>,
         },{
             path:"/dashboard",
-            element: <div>Dashboard</div>
+            element: <DashboardLayout></DashboardLayout>,
+            children:[
+                {
+                    path:"/dashboard",
+                    element:<Dashboard></Dashboard>,
+                },
+                {
+                    path:"/dashboard/profile",
+                    element:<Profile></Profile>,
+                },
+                {
+                    path:"/dashboard/editprofile",
+                    element:<EditProfile></EditProfile>,
+                },
+            ]
         },
         {
           path:"/product/:id",

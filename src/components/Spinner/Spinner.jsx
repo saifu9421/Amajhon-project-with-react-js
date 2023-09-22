@@ -5,7 +5,7 @@ const Spinner = () => {
 
     return (
         <div className="text-center">
-       <span className="loading loading-spinner text-error"></span>
+       <span className="loading loading-bars text-warning loading-lg"></span>
         </div>
       
     );
